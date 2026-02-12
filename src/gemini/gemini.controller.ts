@@ -1,14 +1,14 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { GeminiService } from './gemini.service';
+import { BasicPromptDto } from './dtos/basic-prompt.dto';
 
 @Controller('gemini')
 export class GeminiController {
   constructor(private readonly geminiService: GeminiService) {}
 
-  @Get()
-  getHello() {
-    const apiKey = process.env.GEMINI_API_KEY;
+  @Post('basic-prompt')
+  basicPrompt(@Body() basicPromptDto: BasicPromptDto) {
 
-    return `Hola Mundo, API Key: ${apiKey}`;
+    return this.geminiService.basicPrompt(basicPromptDto);
   }
 }
