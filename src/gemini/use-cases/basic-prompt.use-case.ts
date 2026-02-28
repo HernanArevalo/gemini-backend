@@ -11,10 +11,10 @@ export const basicPromptUseCase = async (
     basicPromptDto: BasicPromptDto,
     options?: Options
 ) => {
-    const { 
+    const {
         model = "gemini-2.5-flash",
-        systemInstruction = 
-            `Responde únicamente en español
+        systemInstruction =
+        `Responde únicamente en español
             en formato markdown
             con un tono amigable
             de manera resumida

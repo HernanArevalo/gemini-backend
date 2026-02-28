@@ -11,10 +11,10 @@ export const basicPromptStreamUseCase = async (
     basicPromptDto: BasicPromptDto,
     options?: Options
 ) => {
-    const { 
+    const {
         model = "gemini-3-flash",
-        systemInstruction = 
-            `Responde únicamente en español
+        systemInstruction =
+        `Responde únicamente en español
             en formato markdown
             con un tono amigable
             usa el sistema metrico decimal

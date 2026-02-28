@@ -5,7 +5,7 @@ import express from 'express';
 
 @Controller('gemini')
 export class GeminiController {
-  constructor(private readonly geminiService: GeminiService) {}
+  constructor(private readonly geminiService: GeminiService) { }
 
   @Post('basic-prompt')
   basicPrompt(@Body() basicPromptDto: BasicPromptDto) {
@@ -18,11 +18,11 @@ export class GeminiController {
     @Body() basicPromptDto: BasicPromptDto,
     @Res() res: express.Response,
     // todo: Files
-  
+
   ) {
 
 
-    const stream = await  this.geminiService.basicPromptStream(basicPromptDto);
+    const stream = await this.geminiService.basicPromptStream(basicPromptDto);
 
     res.setHeader('Content-Type', 'text/plain');
     res.status(HttpStatus.OK);
